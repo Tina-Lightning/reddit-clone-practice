@@ -4,15 +4,15 @@ import React from "react";
 import AuthButtons from "./AuthButtons";
 
 type RightContentProps = {
-  // user:any;
+  user: any;
 };
 
-const RightContent: React.FC<RightContentProps> = () => {
+const RightContent: React.FC<RightContentProps> = ({ user }) => {
   return (
     <>
       <AuthModal />
       <Flex justify="center" align="center">
-        <AuthButtons />
+        {user ? <div>there is a user</div> : <AuthButtons />}
       </Flex>
     </>
   );
