@@ -2,13 +2,17 @@ import { Box, Flex, Icon, Image, Text, Button } from "@chakra-ui/react";
 import React from "react";
 import { FaReddit } from "react-icons/fa";
 import { Community } from "@/atoms/communitiesAtom";
+import useCommunityData from "../../hooks/useCommunityData";
 
 type HeaderProps = {
   communityData: Community;
 };
 
 const Header: React.FC<HeaderProps> = ({ communityData }) => {
+  const { communityStateValue, joinCommunity, leaveCommunity } =
+    useCommunityData();
   const isJoined = false; // will read from communitySnippets
+
   return (
     <Flex direction="column" width="100%" height="146px">
       <Box height="50%" bg="blue.400" />

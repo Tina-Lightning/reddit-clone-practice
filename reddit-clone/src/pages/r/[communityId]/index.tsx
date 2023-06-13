@@ -1,11 +1,12 @@
-import NotFound from "@/components/Community/NotFound";
+import NotFound from "../../../components/Community/NotFound";
 import { Community } from "../../../atoms/communitiesAtom";
 import { firestore } from "../../../firebase/clientApp";
 import { doc, getDoc } from "firebase/firestore";
 import { GetServerSidePropsContext } from "next";
 import React from "react";
 import safeJsonStringify from "safe-json-stringify";
-import Header from "@/components/Community/Header";
+import Header from "../../../components/Community/Header";
+import PageContent from "../../../components/Layout/PageContent";
 
 type CommunityPageProps = {
   communityData: Community;
@@ -21,6 +22,14 @@ const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
   return (
     <>
       <Header communityData={communityData} />
+      <PageContent>
+        <>
+          <div>LHS</div>
+        </>
+        <>
+          <div>RHS</div>
+        </>
+      </PageContent>
     </>
   );
 };
